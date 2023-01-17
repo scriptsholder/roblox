@@ -1,0 +1,116 @@
+-- game anticheat is so bad that almost everything can be made by changing bool, int, number values and firing a remote
+--Monster Hunt Simulator!
+
+local lp = game:GetService("Players").LocalPlayer
+local data1 = lp.data.main_data
+local achid = lp.data["achieve_data"]
+local productd = lp.data.product_data
+local mapdata = lp.data["map_data"]
+_G.autolvlup = false
+_G.a = false
+data1.maxWeaponBag.Value = 999 -- if x > 301, x = 300🤯
+if game:GetService("Workspace"):FindFirstChild("kick") ~= nil then
+	game:GetService("Workspace").kick:Destroy()
+end
+
+function infattackdis()
+	data1:FindFirstChild("attackDis").Value = math.random(50000000, 90000000)
+end
+
+function damage()
+	data1:FindFirstChild("damage").Value = 999999
+	data1:FindFirstChild("all_damage").Value = 999999*2
+end
+
+function noattackspeed()
+	data1:FindFirstChild("attack_speed").Value = -9999999999999999999
+	lp.Character.val:FindFirstChild("attspeed").Value = -9999999999999999999
+end
+
+function getallmapsachieves()
+	data1:FindFirstChild("MaxMap").Value = 15
+end
+
+function getgamepass()
+	for i,v in pairs(productd:GetDescendants()) do
+		if v:IsA("BoolValue") then
+			v.Value = not v.Value
+	end
+	end
+end
+
+function unlockallmaps()
+	for i, v in pairs(mapdata:GetDescendants()) do
+		v.Value = not v.Value
+	end
+end
+
+function autofarm()
+	
+end
+
+getallmapsachieves()
+
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=244024 -- (i dont know how to make a good looking gui😥)
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))() --someone reuploaded it so I put it in place of the original back up so guy can get free credit.
+local venyx = library.new("Monster Hunt Simulator", 5013109572)
+
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = venyx:addPage("Misc", 5012544693)
+local page2 = venyx:addPage("Auto Farm", 5012544693)
+local page2s = page2:addSection("AutoFarm")
+local section1 = page:addSection("Section 1")
+
+page2s:addButton("Auto Farm", function ()
+_G.a = not _G.a
+local Signals = {'MouseButton1Down', 'MouseButton1Click', 'Activated'}
+local Button = lp.PlayerGui.MainGui["menu_Frame"]["ImageButton_autofight"]
+for i,v in pairs(Signals) do
+firesignal(Button[v])
+end
+while _G.a do
+lp.data["skill_data"].canSkill.Value = true
+lp.data["skill_data"]["skill_cd2"].Value = -1
+lp.data["skill_data"]["skill_cd3"].Value = -1
+lp.data["skill_data"]["skill_cd1"].Value = -1
+wait()
+end
+getgamepass()
+infattackdis()
+end)
+section1:addButton("Unlock all Gamepasses", function()
+getgamepass()
+end)
+
+section1:addButton("Inf attack distance", function()
+infattackdis()
+end)
+
+section1:addButton("No attack cd", function()
+noattackspeed()
+end)
+
+section1:addButton("Unlock all maps", function()
+unlockallmaps()
+end)
+
+section1:addToggle("Auto lvl up", nil, function(value)
+_G.autolvlup = not _G.autolvlup
+while _G.autolvlup == true do
+game:GetService("ReplicatedStorage").Player.Event.lvup:FireServer(1)
+wait()
+end
+end)
+-- load
+venyx:SelectPage(venyx.pages[1], true) -- no default for more freedom
