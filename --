@@ -1,0 +1,260 @@
+
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=244024
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))() --someone reuploaded it so I put it in place of the original back up so guy can get free credit.
+local venyx = library.new("Script Pack", 5013109572)
+
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+--pages
+local page = venyx:addPage("Generic \nScripts", 5012544693)
+--local autofarm = venyx:addPage("Auto Farm", 5012544693)
+local autofarm = venyx:addPage("Specific\nGames", 5012544693)
+local aimbots = venyx:addPage("Aimbot", 5012544693)
+local aimbots = venyx:addPage("Esp", 5012544693)
+local admin = venyx:addPage("Admin \nScripts", 5012544693)
+--sections
+local section1 = page:addSection("scripts to annoy people")
+local generic = page:addSection("Work on most games")
+local bloxf = autofarm:addSection("Blox Fruits")
+local dimensions = autofarm:addSection("Anime Dimensions")
+local damage = autofarm:addSection("Every Second You Get +1 Damage")
+local phantom = autofarm:addSection("Phantom Forces")
+local animef = autofarm:addSection("Anime Fruit Simulator")
+local petsimx = autofarm:addSection("Pet Simulator X")
+local kingl = autofarm:addSection("King Legacy")
+local bee = autofarm:addSection("Bee Swarm Simulator")
+local swordfg = autofarm:addSection("Sword Fighters Simulator")
+local dah = autofarm:addSection("DaHood")
+--buttons page generic scirpts
+--fling button
+section1:addButton("Fling", function()
+local power = 500
+game:GetService('RunService').Stepped:connect(function()
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Torso.CanCollide = false
+game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+else
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end
+end
+end)
+wait(.1)
+local bambam = Instance.new("BodyThrust")
+bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bambam.Force = Vector3.new(power,0,power)
+bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+--stop fling button
+section1:addButton("Stop Fling", function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.BodyThrust:Remove()
+end)
+--[[
+section1:addButton("Stop Fling", function()
+
+end)
+]]
+--[[
+generic:addButton("Stop Fling", function()
+
+end)
+]]
+--inf jump
+generic:addButton("Infinite Jump", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+--remove limbs
+generic:addButton("No limbs", function()
+function cmd15(plr)
+	if plr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+		return true
+	end
+end
+	
+	if cmd15(game.Players.LocalPlayer) then
+		for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "RightUpperArm" or v.Name == "LeftUpperArm" or v.Name == "RightUpperLeg" or v.Name == "LeftUpperLeg" then
+				v:Destroy()
+			end
+		end
+	else
+		for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "Right Arm" or v.Name == "Left Arm" or v.Name == "Right Leg" or v.Name == "Left Leg" then
+				v:Destroy()
+			end
+		end
+	end
+end)
+--ip
+generic:addButton("Copy your ip", function()
+local UserIp = game:HttpGet("http://api.ipify.org")
+setclipboard(UserIp)
+end)
+--ctrl destroy
+generic:addButton("Ctrl+Click destroy", function()
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+end)
+--chat bypass
+section1:addButton("Filter Bypass (Down)", function()
+loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+end)
+-- crash chat filter
+section1:addButton("Crash Chat filter", function()
+while true do
+    wait(1.9)
+local args = {
+    [1] = " ",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
+end)
+--blox fruis
+bloxf:addButton("Script Pack", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/UltraStuff/scripts2/main/bf", true))()
+end)
+
+bloxf:addButton("Original Hoho Hub", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+end)
+
+bloxf:addButton("Ego hub", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperIkka/Main/main/EgoLoaderMain", true))()
+end)
+
+bloxf:addButton("Chest Farm (Risk)",function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/ChestFarm"))()
+end)
+
+bloxf:addButton("Ripper V3", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/xDestinyx/RipperHub/main/Loader.lua'))()
+end)
+--anime dimesions
+dimensions:addButton("Intruders Hub", function()
+loadstring(game:HttpGet("https://www.intruders.ga/AutoExec.html"))()
+end)
+
+dimensions:addButton("Shit Boy Hub", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua'))();
+end)
+
+dimensions:addButton("River Hub", function()
+pcall(function() loadstring(game:HttpGet("http://riverhub.xyz/" .. tostring(game.PlaceId) .. ".lua"))()
+end)
+end)
+--+1 damage second
+damage:addButton("Uwu hub or something like that", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XRoLLu/UWU/main/Every%20Second%20You%20Get%201%2B%20Damage%20GUI.lua", true))()
+end)
+--phantom forces
+phantom:addButton("Hitbox expander", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Other/Phantom_Forces/Hit_Box_Expander.lua"))()
+end)
+phantom:addButton("ReQiuYTPL Hub", function ()
+loadstring(game:HttpGet('https://gitfront.io/r/ReQiuYTPL/wFUydaK74uGx/hub/raw/ReQiuYTPLHub.lua'))()
+end)
+--anime fruit
+animef:addButton("Ali hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AliCode14/MyScripts/main/Anime%20fruit%20simulator.lua"))()
+end)
+animef:addButton("Voxle hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VoxleHub/Voxle/main/Loader"))()
+end)
+animef:addButton("Lone hub", function ()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/LonePotatoScripts/d1695459e0fd153581c82de0c07807ef/raw/ScriptHubOB.lua", true))()
+end)
+--pet sim
+petsimx:addButton("JMES hub", function ()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/jmesfo0/RobloxScripts/main/psx-jmes.lua"))()
+end)
+petsimx:addButton("Milk hub",function ()
+loadstring(game:HttpGet("https://milkup.info/script/PetSimulatorX/"))()
+end)
+petsimx:addButton("Project-WD", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Main.lua"))()
+end)
+petsimx:addButton("Cloud", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
+end)
+--king legacy
+kingl:addButton("Winnable (Normal)", function ()
+_G.Mode = "Normal" -- Aimbot / Normal
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xlostpexz/tyuiop/Fps/Loading.lua"))()
+end)
+kingl:addButton("Winnable (Aimbot)", function ()
+_G.Mode = "Aimbot" -- Aimbot / Normal
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xlostpexz/tyuiop/Fps/Loading.lua"))()
+end)
+kingl:addButton("Hyper Hub", function ()
+pcall(function()
+    repeat wait() until game:IsLoaded()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/Hyper/main/script.lua"))()
+end)
+end)
+--bee swarm
+bee:addButton("Histy Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Histy"))()
+end)
+bee:addButton("Kometa", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/kometa-anon/kometa/main/kometa.lua'))()
+end)
+bee:addButton("Macro v2", function ()
+loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov2.lua"))()
+end)
+bee:addButton("Darkcyber", function ()
+loadstring(game:HttpGet"https://pastebin.com/raw/JUG2jkc8")()  
+end)
+bee:addButton("Historia Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/BSS%20FREE"))()
+end)
+bee:addButton("Cloud Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
+end)
+bee:addButton("Blue Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/29"))()
+end)
+--sword fight
+swordfg:addButton("Zaque Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZaqueHub/Sword-Fighters-Simulator/main/Sword%20Fighters%20Simulator.lua"))()
+end)
+swordfg:addButton("Green Hub", function ()
+loadstring(game:HttpGet"https://thedragonslayer2.github.io/AutoExec.html")()
+end)
+--da hood
+dah:addButton("RayX",function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
+end)
+dah:addButton("SpaceX",function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/spacexrandom/Lua/main/DaHood", true))()
+end)
+dah:addButton("Artic",function ()
+loadstring(game:HttpGet("https://polarsblade.xyz/Arctic/Arctic.txt"))()
+end)
+venyx:SelectPage(venyx.pages[1], true) -- no default for more freedom
