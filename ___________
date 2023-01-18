@@ -365,10 +365,11 @@ if not Mouse.Target then return end
 Mouse.Target:Destroy()
 end)
 end)
---chat bypass
+--[[chat bypass
 section1:addButton("Filter Bypass (Down)", function()
 loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
 end)
+]]
 -- crash chat filter
 section1:addButton("Crash Chat filter", function()
 while true do
