@@ -1,0 +1,809 @@
+--[[ Idk who would edit or use this, but🤷‍♂️
+	How to create a page:
+local <pagename> = venyx:addPage("Name/Title", imageid)
+	Page Example:
+local page1 = venyx:addPage("Page 1 :)", 123456789)
+---------------
+	How to add a Section:
+local <sectionname> = <pagelocalname>:addSection("SectionName")
+	Section Example:
+local section1 = page1:addSection("Section 1")
+---------------
+	How to add button with the script you want:
+<section>:addButton("Name/Text", function()
+SCRIPT
+end)
+	Button Example:
+section1:addButton("Example!", function()
+SCRIPT
+end)
+----------------
+How would it look Like:
+
+local page1 = venyx:addPage("Page 1 :)", 123456789)
+local section1 = page1:addSection("Section 1")
+section1:addButton("Example!", function()
+print("Working!")
+end)
+]]
+--other things (other script configs, locals, etc)
+function noti()
+game.StarterGui:SetCore("SendNotification", {
+Title = "Loading..."; 
+Text = "Loading";
+Duration = 0.1;
+})
+end
+
+repeat wait() noti() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+-- i could have made this way easier, but i made it this way
+getgenv().mainKey = "nil"
+getgenv().Key = "putkeyhere"
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local Lp = game:GetService('Players').LocalPlayer
+end
+if game.PlaceId == 5909047091 then
+local Gp = Lp.Gamepasses
+end
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local lp = game:GetService("Players").LocalPlayer
+end
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local char = lp.Character
+end
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local xyz = lp.Character.HumanoidRootPart.Position
+end
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local humanoid = char.Humanoid
+end
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local wakspeed = humanoid.WalkSpeed
+end
+local Toggled = false
+local KeyCode = 'x'
+if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+local wakjump = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
+end
+_G.Options = {
+    ["ToggleKey"] = "Delete",
+}
+getgenv().range=20
+getgenv().DealerAutoFarm = true
+--Gui Library Made by : https://v3rmillion.net/member.php?action=profile&uid=244024 (the one i made looked so shit that i gave up and used a premade one)
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))() --someone reuploaded it so I put it in place of the original back up so guy can get free credit.
+local venyx = library.new("😱😨", 5013109572)
+
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+--pages
+local page = venyx:addPage("Universal", 5012544693)
+local autofarm = venyx:addPage("Specific\nGames", 5012544693)
+local aimbot = venyx:addPage("Aimbot/Esp", 5012544693)
+local admin = venyx:addPage("Admin \nScripts", 5012544693)
+local othubs = venyx:addPage("Other Hubs", 5012544693)
+local dt = venyx:addPage("Useful\nthings", 5012544693)
+local ssettings = venyx:addPage("Script\nSettings", 5012544693)
+local info = venyx:addPage("Info", 5012544693)
+--sections
+--universal
+local s = admin:addSection(" ")
+local section1 = page:addSection("scripts to annoy people")
+local generic = page:addSection("Universal")
+--Autofarm
+local bloxf = autofarm:addSection("Blox Fruits")
+local dimensions = autofarm:addSection("Anime Dimensions")
+local damage = autofarm:addSection("Every Second You Get +1 Damage")
+local phantom = autofarm:addSection("Phantom Forces")
+local animef = autofarm:addSection("Anime Fruit Simulator")
+local petsimx = autofarm:addSection("Pet Simulator X")
+local kingl = autofarm:addSection("King Legacy")
+local bee = autofarm:addSection("Bee Swarm Simulator")
+local swordfg = autofarm:addSection("Sword Fighters Simulator")
+local dah = autofarm:addSection("DaHood")
+local shindo = autofarm:addSection("Shindo Life")
+local projectn = autofarm:addSection("Project New World")
+local jail = autofarm:addSection("Jail Break")
+local onepgame = autofarm:addSection("A One Piece Game")
+local shrc = autofarm:addSection("Super Hero Race Clicker")
+local arsenal = autofarm:addSection("Arsenal")
+local towerh = autofarm:addSection("Tower of Hell")
+local steep = autofarm:addSection("Steep Steps")
+local greenv = autofarm:addSection("Greenville AutoFarm")
+local yba = autofarm:addSection("YBA")
+local df = autofarm:addSection("Demonfall")
+local evade = autofarm:addSection("Evade")
+local nd = autofarm:addSection("Natural Disaster Simulator")
+local flyr = autofarm:addSection("Fly Race")
+local apeiro = autofarm:addSection("Apeirophobia")
+local nl = autofarm:addSection("Ninja Legends")
+local hcaf = autofarm:addSection("Human Cannon")
+local thesg = autofarm:addSection("The Survival Game")
+local ff = autofarm:addSection("Funky Friday")
+local bigpaint = autofarm:addSection("Big Paintball")
+local kat = autofarm:addSection("K.A.T")
+local badbu = autofarm:addSection("Bad Business")
+local zombiet = autofarm:addSection("Zombie Tycoon")
+local crim = autofarm:addSection("Criminality")
+local bbr = autofarm:addSection("Booga Booga Reborn")
+local bhrm = autofarm:addSection("Black Hawk Rescue Mission 5")
+local mm2 = autofarm:addSection("Murder Mystery 2")
+local mri = autofarm:addSection("My Restaurant")
+local mt = autofarm:addSection("Military Tycoon")
+local dp = autofarm:addSection("Driving Empire")
+local apr = autofarm:addSection("Apocalypse Rising 2")
+local lt = autofarm:addSection("Lumber Tycoon 2")
+--script settings
+local range = ssettings:addSection("Autoactivate sword + Higher range Settings")
+local dealer = ssettings:addSection("Greenville: AutoFarm Dealer state")
+--aimbot
+local ss = aimbot:addSection(" ")
+--h
+local ohub = othubs:addSection("")
+--dt
+local us = dt:addSection("This is Normally Used By Script Devs")
+local us2 = dt:addSection("Other")
+--buttons
+--universal aimbot/esp
+ss:addButton("Universal Aimbot+Esp", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/dasdasdasdas"))()
+end)
+ss:addButton("Universal Esp", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/ddasdasdaasdas"))()
+end)
+ss:addButton("Exunys V2", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Aimbot%20V2%20GUI.lua"))()
+end)
+ss:addButton("RedWire NPC+Player Aimbot", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RedWirePlatinumTwo/RobloxScripts/main/Aimbot.lua"))()
+end)
+ss:addButton("Unnamed ESp (Synapse Only)", function ()
+pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+end)
+--admin scirpts
+s:addButton("Prison Life Admin", function ()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+end)
+s:addButton("Reviz Admin", function ()
+loadstring(game:HttpGet("https://pastebin.com/raw/RqaZUrBZ"))()
+end)
+s:addButton("Cmd-x", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
+end)
+s:addButton("Infinite Yield", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+s:addButton("Fates Admin | Ç to open", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+end)
+--universal
+--Universal Script Search
+generic:addButton("Script Search (Yes, you can search for scripts inside a game)\nCredit: Cedric#0591", function ()
+_G.posX = 0.405
+_G.posY = 0.9
+_G.searchButton = ";"
+_G.commandPrefix = "/"
+spawn(loadstring(game:HttpGet('https://raw.githubusercontent.com/alvin677/search/main/search.lua'))())
+end)
+generic:addButton("R15 Anim Gui", function ()
+loadstring(game:HttpGet("https://pastebin.com/raw/0MLPL32f"))()
+end)
+--energize gui
+--universal Autoactivate sword + Higher range (got it from Mimibienv#6007), i also "fixed" it
+generic:addButton("Autoactivate sword + Higher range\nWorks on almost every sword fighting games",function ()
+local player = game:GetService("Players").LocalPlayer
+game:GetService"RunService".RenderStepped:Connect(function()
+    local plrs = game.Players:GetPlayers()
+    for i=2, #plrs do
+		local v = plrs[i].Character
+        if(v)and(v:FindFirstChild"Humanoid")and(v.Humanoid.Health>0)and(v:FindFirstChild"HumanoidRootPart")and(player:DistanceFromCharacter(v.HumanoidRootPart.Position)<=range)then
+            local tool=player.Character and player.Character:FindFirstChildOfClass"Tool"
+            if tool and tool:FindFirstChild"Handle" then
+                tool:Activate()
+                for i,v in next,v:GetChildren()do
+                    if(v:IsA"BasePart")then firetouchinterest(tool.Handle,v,0);firetouchinterest(tool.Handle,v,1)end
+                end
+            end
+        end
+    end
+end)
+end)
+generic:addButton("Fake BSOD screen", function ()
+local gui = Instance.new('ScreenGui', game:service'CoreGui')
+local button = Instance.new('TextButton', gui)
+
+button.Size = UDim2.new(0, 200, 0, 100)
+button.Position = UDim2.new(.5, 0, .5, 0)
+button.Text = 'infinite robux real'
+
+button.MouseButton1Click:Connect(loadstring(game:HttpGet'https://github.com/RunDTM/roblox-bluescreen/raw/main/bsod.lua'))
+end)
+--fling button
+section1:addButton("Fling GUI", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/f"))()
+end)
+--fake chat
+section1:addButton("Fake Chat", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/f2"))()
+end)
+section1:addButton("Fling", function()
+local power = 500
+game:GetService('RunService').Stepped:connect(function()
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Torso.CanCollide = false
+game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+else
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end
+end
+end)
+wait(.1)
+local bambam = Instance.new("BodyThrust")
+bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bambam.Force = Vector3.new(power,0,power)
+bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+--stop fling button
+section1:addButton("Stop Fling", function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.BodyThrust:Remove()
+end)
+--[[
+section1:addButton("Stop Fling", function()
+
+end)
+]]
+--[[
+generic:addButton("Stop Fling", function()
+
+end)
+]]
+--inf jump
+generic:addButton("Infinite Jump", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+--remove limbs (just "changed" the cmd-x no limbs command so it work outside cmd-x)
+generic:addButton("No limbs", function()
+function cmd15(plr)
+	if plr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+		return true
+	end
+end
+	
+	if cmd15(game.Players.LocalPlayer) then
+		for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "RightUpperArm" or v.Name == "LeftUpperArm" or v.Name == "RightUpperLeg" or v.Name == "LeftUpperLeg" then
+				v:Destroy()
+			end
+		end
+	else
+		for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "Right Arm" or v.Name == "Left Arm" or v.Name == "Right Leg" or v.Name == "Left Leg" then
+				v:Destroy()
+			end
+		end
+	end
+end)
+--ip
+generic:addButton("Copy your ip", function()
+local UserIp = game:HttpGet("http://api.ipify.org")
+setclipboard(UserIp)
+end)
+--x, y, z checker
+us:addButton("X, Y, Z checker", function () --not made by me
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/cords"))()
+end)
+--noclip
+generic:addButton("Noclip | Keybind: N", function ()
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+ 
+if key == "n" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+end)
+--sit
+generic:addButton("Sit", function ()
+game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = true --🤯
+end)
+--ctrl destroy
+generic:addButton("Ctrl+Click destroy", function()
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+end)
+--chat bypass
+section1:addButton("Filter Bypass (Down)", function()
+loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+end)
+-- crash chat filter
+section1:addButton("Crash Chat filter", function()
+while true do
+    wait(1.9)
+local args = {
+    [1] = " ",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
+end)
+--auto farm scripts
+--blox fruis
+bloxf:addButton("Script Pack", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/UltraStuff/scripts2/main/bf", true))()
+end)
+bloxf:addButton("Zamex", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Sixnumz/ZamexHub/main/Zamex_PC.lua'))()
+end)
+bloxf:addButton("Original Hoho Hub", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+end)
+
+bloxf:addButton("Ego hub", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperIkka/Main/main/EgoLoaderMain", true))()
+end)
+
+bloxf:addButton("Chest Farm (Risk)",function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/ChestFarm"))()
+end)
+
+bloxf:addButton("Ripper V3", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/xDestinyx/RipperHub/main/Loader.lua'))()
+end)
+--anime dimesions
+dimensions:addButton("Intruders Hub", function()
+loadstring(game:HttpGet("https://www.intruders.ga/AutoExec.html"))()
+end)
+
+dimensions:addButton("Shit Boy Hub", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua'))();
+end)
+
+dimensions:addButton("River Hub", function()
+pcall(function() loadstring(game:HttpGet("http://riverhub.xyz/" .. tostring(game.PlaceId) .. ".lua"))()
+end)
+end)
+--+1 damage second
+damage:addButton("Uwu hub or something like that", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XRoLLu/UWU/main/Every%20Second%20You%20Get%201%2B%20Damage%20GUI.lua", true))()
+end)
+--phantom forces
+phantom:addButton("Hitbox expander", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Other/Phantom_Forces/Hit_Box_Expander.lua"))()
+end)
+phantom:addButton("ReQiuYTPL Hub", function ()
+loadstring(game:HttpGet('https://gitfront.io/r/ReQiuYTPL/wFUydaK74uGx/hub/raw/ReQiuYTPLHub.lua'))()
+end)
+phantom:addButton("Wersdown Software(Phantom Forces, May Crash Free Exploits)", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Amenteso/robloxscripts/main/Key.lua",true))()
+end)
+--anime fruit
+animef:addButton("Ali hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AliCode14/MyScripts/main/Anime%20fruit%20simulator.lua"))()
+end)
+animef:addButton("Voxle hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VoxleHub/Voxle/main/Loader"))()
+end)
+animef:addButton("Lone hub", function ()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/LonePotatoScripts/d1695459e0fd153581c82de0c07807ef/raw/ScriptHubOB.lua", true))()
+end)
+--pet simulator x
+petsimx:addButton("JMES hub", function ()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/jmesfo0/RobloxScripts/main/psx-jmes.lua"))()
+end)
+petsimx:addButton("Milk hub",function ()
+loadstring(game:HttpGet("https://milkup.info/script/PetSimulatorX/"))()
+end)
+petsimx:addButton("Project-WD", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Main.lua"))()
+end)
+petsimx:addButton("Cloud", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
+end)
+--king legacy
+kingl:addButton("Winnable (Normal)", function ()
+_G.Mode = "Normal" -- Aimbot / Normal
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xlostpexz/tyuiop/Fps/Loading.lua"))()
+end)
+kingl:addButton("Winnable (Aimbot)", function ()
+_G.Mode = "Aimbot" -- Aimbot / Normal
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xlostpexz/tyuiop/Fps/Loading.lua"))()
+end)
+kingl:addButton("Hyper Hub", function ()
+pcall(function()
+    repeat wait() until game:IsLoaded()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/Hyper/main/script.lua"))()
+end)
+end)
+--bee swarm
+bee:addButton("Histy Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Histy"))()
+end)
+bee:addButton("Kometa", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/kometa-anon/kometa/main/kometa.lua'))()
+end)
+bee:addButton("Macro v2", function ()
+loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov2.lua"))()
+end)
+bee:addButton("Darkcyber", function ()
+loadstring(game:HttpGet"https://pastebin.com/raw/JUG2jkc8")()  
+end)
+bee:addButton("Historia Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/BSS%20FREE"))()
+end)
+bee:addButton("Cloud Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
+end)
+bee:addButton("Blue Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/29"))()
+end)
+--sword fighter
+swordfg:addButton("Zaque Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZaqueHub/Sword-Fighters-Simulator/main/Sword%20Fighters%20Simulator.lua"))()
+end)
+swordfg:addButton("Green Hub", function ()
+loadstring(game:HttpGet"https://thedragonslayer2.github.io/AutoExec.html")()
+end)
+--da hood
+dah:addButton("RayX", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
+end)
+dah:addButton("SpaceX", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/spacexrandom/Lua/main/DaHood", true))()
+end)
+dah:addButton("Artic", function ()
+loadstring(game:HttpGet("https://polarsblade.xyz/Arctic/Arctic.txt"))()
+end)
+dah:addButton("X to Anti Lock", function ()
+function AA()
+    local oldVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(oldVelocity.X, -70, oldVelocity.Z)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(oldVelocity.X, oldVelocity.Y, oldVelocity.Z)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(oldVelocity.X, -70, oldVelocity.Z)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 4.14
+end
+
+game:GetService('UserInputService').InputBegan:Connect(function(Key)
+    if Key.KeyCode == Enum.KeyCode[KeyCode:upper()] and not game:GetService('UserInputService'):GetFocusedTextBox() then
+        if Toggled then
+            Toggled = false
+            game.Players.LocalPlayer.Character.Humanoid.HipHeight = 1.85
+
+        elseif not Toggled then
+            Toggled = true
+
+            while Toggled do
+                AA()
+                task.wait()
+            end
+        end
+    end
+end)
+end)
+--shindo life
+shindo:addButton("VG Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+shindo:addButton("Premier Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TrustsenseDev/Utilities/main/Premier.lua', true))()
+end)
+shindo:addButton("Platinum Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Platinum"))()
+end)
+--project new world
+projectn:addButton("SoggyWare", function ()
+loadstring(game:HttpGet("https://www.soggy-ware.cf"))()
+end)
+projectn:addButton("Alpha Hub", function ()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Uvxtq/Project-AlphaZero/main/AlphaZero/Loader.lua")))()
+end)
+projectn:addButton("Mercury Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/samandroidpro/Scripts2022/main/NewWorld.lua"))()
+end)
+--jail break
+jail:addButton("Vynixius Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua"))()
+end)
+jail:addButton("Auto Farm", function ()
+loadstring(game:HttpGet('https://scripts.luawl.com/14245/JailbreakerFree.lua'))()
+end)
+jail:addButton("Remove Holding E time", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gab1tzuu404/roblox-scripts/main/jailbreak.lua"))()
+end)
+--A 0ne Piece Game
+onepgame:addButton("6Foot", function ()
+loadstring(game:HttpGet('https://www.6footscripts.com/Scripts/6FootHub/Hub.lua'))()
+end)
+onepgame:addButton("LeadMarker (NOT WORKING)", function ()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Testing-A-0ne-Piece-Game-LeadMarkerAOPG-1595"))()
+end)
+onepgame:addButton("Liok/Lazy hub", function ()
+repeat wait() until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LioK251/RbScripts/main/lazyhub.lua"))()
+end)
+--Super Hero Race Clicker
+shrc:addButton("Auto Farm", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0herorace", true))()
+end)
+--green vile
+greenv:addButton("Auto Farm", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Mstir16/legocheats/main/archive/Greenville/Roadmap%20Dealership%20Autofarm"))()
+end)
+--tower of hell
+towerh:addButton("Anti Cheat Bypass, infjump, etc", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Amenteso/robloxscripts/main/Key.lua",true))()
+end)
+towerh:addButton("Godmode, Player Mods, Give All Items", function ()
+loadstring(Game:HttpGet("https://raw.githubusercontent.com/flerci42/AdminusKeySystem/main/Obfuscated"))()
+end)
+--arsenal
+arsenal:addButton("Wersdown Software(arsenal, May Crash Free Exploits)", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Amenteso/robloxscripts/main/Key.lua",true))()
+end)
+arsenal:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+arsenal:addButton("Aimbot/Esp", function ()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Script-Leaker/62ca86f941fc09c97c072678bf859ebe/raw/3d76fe9a8fc2f6a12cc9aaa5f8e98237d49a8654/plhubleak.lua"))()
+end)
+--steep steps
+steep:addButton("Wersdown Software(Steep steps, May Crash Free Exploits)", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Amenteso/robloxscripts/main/Key.lua",true))()
+end)
+--YBA
+yba:addButton("Bitch Boy Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/v3.lua"))()
+end)
+yba:addButton("Dealth Hub", function ()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VoidGaster/Scripts/main/" .. tostring(game.PlaceId)),true))()
+end)
+yba:addButton("Some Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tobias020108Back/YBA-AUT/main/YBA-GUI-Rewrite.lua"))()
+end)
+yba:addButton("Some Hub 2", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ketamo/ybaa/main/yba"))()
+end)
+--demon fall
+df:addButton("LeadMarker (May not work)", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LeadMarker/OpenSource/main/Demonfall.lua"))()
+end)
+df:addButton("Idk", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SoIicitor/scripts/main/demonsfall"))()
+end)
+df:addButton("Ghost Hub👍", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghost-home/public/main/demonfall.lua', true))() 
+end)
+--evade
+evade:addButton("Darkrai X", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Evade"))()
+end)
+--Natural Disaster
+nd:addButton("Darkware", function ()
+return(function(h,a,a)local k=string.char;local e=string.sub;local o=table.concat;local m=math.ldexp;local n=getfenv or function()return _ENV end;local l=select;local g=unpack or table.unpack;local j=tonumber;local function p(h)local b,c,d="","",{}local g=256;local f={}for a=0,g-1 do f[a]=k(a)end;local a=1;local function i()local b=j(e(h,a,a),36)a=a+1;local c=j(e(h,a,a+b-1),36)a=a+b;return c end;b=k(i())d[1]=b;while a<#h do local a=i()if f[a]then c=f[a]else c=b..e(b,1,1)end;f[g]=b..e(c,1,1)d[#d+1],b,g=c,c,g+1 end;return table.concat(d)end;local j=p('1R21X27521Y22527521X21D21621I21D21J2182171Y21Y21T2791Y2102141W21Y21U2791D21D21D21H121W21D21Y1527921927U21H21I23J22Y22Y21J21021E22Z1Y21821D21921C21321C21I1W21J21221621721D1W28Q22Z28O21422Y1S21027F21A23A23823B22Y1128Z21A1I28Z1W22Y21421027G22Y21F28M21I21828P2772791C21727D21021721227P21Y2792171W21E21Y2272791721521C21J101Z1Z1W21227Z278275192181Y28327G27I27K2751M21821R1W21W2792AS21X21Y2242791M21221J1W28S1221C2182AV2791H1W21P21D192102131W21527J2791B27N27P2AL21X2B82BA21Y21V2791L29A28Q21Y22D2A221021221A1Y21J21621C2171X1621621521621J23A2BQ2792C82CA2CC27Q2791Z2C32141N12172AR2AS25H121521Y22B2BY2C02C22C42C61H28A29P21H2BU21221O2CR2AS25123E21Y2222A22CB1X28M2AN2AP1L21821P2BF29M2751L27C28F29K21721Y21S2791G1121821423B21W1722S26R21M1U1M24C23E21W1P23H21V22T25Z26N24S2ED2AT21X21O152DA29N2CV2BM1328P27Z2BM1021721C2142A02791221628G27N172C91X2F32752BO21D2CG2CB23A2ER21X24L2162CV2AD2BN2B921D2DK2AQ2EN23F2CV2BX2FD2FQ2D329R21I2D62B029S21O21Y2262B72FQ1I28A21H21H1W1X21Z21W2FC21X1C29D1Y1W2BC2BE2BG27R2752C82B02B32182FJ2FK2EM2DB21323P2FJ21H21123P2DQ21X1N2F621021D2DV2FJ25121J2EQ2AT2GD2CV2DY2752GL2102GN21Y22A27921J21321P21021I28L2HD1X28722Y23423H23723G2382342382I723B21Y22C29N2GM1W2G02D52D72D92EN21X2EQ2672642IQ2IQ2702DD2BM21E29E21D2GY21T2CV2GS21X111W27D2C32G62J21L2152BZ1W1C1X2CR25H26Z21L27124N142DX27921H27F2BV22P2A228I2132151W22T2B321422T2AN2K02J428R2AB2GF22X22T192162101X2AJ22T1G1C22S2GJ2CA2KC2J62AJ21Y1028228428628828A28C28E28G28I28K28M28O28Q28S21D28U21628W28Y29029229429621J29829A29C29E21722Y172JU2JW2JZ2K22CR151X25L21G24M2JM22V2CF28K27B2K321C2BF21I22T2K42AA28R1X2K82KA2KC2KE2KG2KI112KQ27V2KS28928B28D28F28H28J28L28N2EW2L32L52L728Z2182912932952972992B02LG29F162LY2L6112M121521I2DA25P22225D26J2JM22T2791421C27B2M42N92M32M52K62M82K92KB2KD27H2KF2KH21Y172MG2852I22KU2ML2KX2MO2L02MR28T28V28X2MV2MX2LB2N02LF29D29F2NK27B2N82M22ER1T23121U2JM22Y2BI2HC2A52102152M421821I2HX28R21J2K12A521F21821F2OX2M427Y2M62K72NT2MB2NW2MD21Y162O12MI2O42KW2MN2KZ2MQ2L22OA2L62OC2L92MY2LC2LE2N22OI2LI2172OV28A2152KD2NB27523P24521M23P24L2JM2322792J42J621C2AB2DV2K12E221C2JB27B2P42NQ2M72M92NU2MC2NY122PL2O32MK2PO2KY2MP2L128R2PT2MU2PW2OF2LD2N129B2Q122Y2DI2QJ2QL28P29J2142DA23926Q23X23K2JM22J2B72192JX182102AP2PB2K52QU2PF2NV1Y2NX2KI2812752832MH2R12KV2MM2R42O82PS2L42OB2L82MW2LA2MZ2RC2OH2LH22Y28G1W29D2AP2CR2451923R1L24W2NH2NJ21428P1Y27D2KF2NP2PC2NR2QV2PG2S52PI142R02KT2R22SE2O72PR2R72SI2PU2SK2OE2SN2PZ2RE2SQ27N2T52LY2CR23P22022E22G2472QF2QH2162L62G22182B022T1727F2C02132HC21D2JW2S02PD2NS2MA2S42S62NZ2TH2MJ2SD2O62PQ2R62MS2SJ2OD2SM2PY2RD2N32LI1X2U72142U92B02DA21C23L23D2482JM22U2B721621E28M22T2161Z22T1D2BF2OY2QT2PE2UN2QX2ME2UR2PN2TK2UV2O92TO2R92SL2PX2OG2Q02SQ27B2VJ2C31Z2RV2152152DA24T21Z25K26F2JM22S2BS27F21I28P2K92182A92UK2TB2S32VV2PJ2VX2TJ2UU2R52W12MT2PV2W42RB2TT2V322Y2JP2P028P2152WS27P2A127527X2FR28M2P729T2GJ1M21D28Z2P32GW2CJ2AM27Y2GU27P2FX21X1M28S1X1B2F62WS2182122HC2DV2JN2FD28F2JW2H82V129A21Y2382F42BK22T2172F622T2EV2C51X22Y1M21C2GD2CB2S22JA1W2HX2JX2R62BZ21D22T2SS2PB21F2WM2AS2342CR22F2NI2752DA22F2ZG21X21Z2792ZF2AR2AR29V2ZI2AU21X2BM2792ZP2IM2792ZL2ZR2AR2HM21X2ZN21X2AR2BR2ZR2ZL2J22ZR29V2ZL2752ZF29V29V2FO31052ZS2ZL2392ZJ2AW2A1310821X31022ZF2ZL2ZL310727621X2G82AT310U2ZK21X310B310R2ZM310X29V310W2ZT21X2212EN310C3112310M2ZS22021X22321X2FX29V2DF2ZZ27527K2IE310E311Q311A2ZI2ZR2DY22E2792ZR2BR311Z2752ZR27R31232AS27K27R2ZL311M311L311A311G29V22921X22821X312F21X2CX310P311U22L3116311A27K31192DY22K31202752BR2XH311327527R22N312X21X278313027927K278312B310X2HS27K2ZR27K312Q311T312S21X312U21X3130312121X22M313527R313O27527822H2EN313A3112312C2AW313F311U2RT313J27K27K22G3103311U27K22I312D2ZS314927K312C311K3124311U311S314A313K311W2752DY2ZA3131313L21X314S3125314V313Y21X312A314E29V2NI27K312L2LW2VG312L2JS2A1312L22O21X22R314T27K310S314B314U311X21X22Q314Z3111315L310D314N2DY2DY231314E2ZL2DF2DY2FX27K311O314T2DY314M2ZF315T315K312Y312I313S316A314K3136316C2AS2DY313B314E314H3115311G27K312H312J315L313I31032JS316731192BR230316B2333135278316X316D2AW2QG2AT2DY2AW313C311A2HS2DY316M21X22X313N316321X316R316631153107311I312Z312028127R22W3170317G317321X22Z2EN31773140311U2AW317C311U2OT310M317D2YJ316P314Q316F313P313X316D27R23B31392TG2DY214310J22D31342AR2AW27822T2DF314221X2YJ2ZF2AW2AW23A316J318U21X2AW2ZR2AW2352EN2AW2ZO2ZT315F2DY1Z310J22F2IE2DY31963124317S2BR234317Y31122AR315L312J316D2BR318D314T318F3139318A21M318L315N2AW313X27822D2VG318O3192314N318T318V275318X21X318Z316031912AW318W2ZS2JS31AJ318Y315221X2JS319331AC21X319I2AS3198310J21T319B27A310J22T23631152AR237275312H2DY2ZL2AR317K2ZL31B627931B9319E318A31AU31BF310J319P318A315R317K2DY31B3315F311525R310J23H2ZT2ZR21X31BU2AR21T31BY25V319E319G21X23G312023D314U23J319N31BA317H23I31352BR31BO31692BR2ZQ313V21X31CA2AT31AW2AT2BR2AW31762ZY316G31BL31BX27923521W319P31C631BO31B6316731BR311C2DY266310J23C31CZ27531DB31C131BY26A31C5311531C8312431CA2BR23F31CD31BH311531CG319S3112313J2BR31CL314T27823E3197310J31CS31A831CV275315R31B431AX31BY31D131D3311531D5311531BQ315E318A26Q310J28131C227931EL31EE2DY31DM311331DO21X2TG31CV31CE315L31DU314T31CI312R31DY2ZS2ZR2782O031CQ31E42AS31CT319N31E831CX319931EO27531ED311331D42ZM31D6311531D8311526X310J2PK31FI21X31FS31DH27923X31DK31ES31C9314U2MF31EY31DS2DY31F1313P31CJ314U31DZ31F721X2KP31FA2GY31FD31E731DW318A31FH31EC31D231FL31EF31FN31EH21X31BR318A24D310J1331DE21X31GX31ER31C731G32BR2QZ31G631BM31DT31CH31GL2ZF31F531CM316E1D31E331GI31E631CX31FF31BK31GN31D031GP319F31GR310E31FO31EI22R31D921X248310J1C31H031HZ31FY27524S31G131H431DN314U1F31DR31H931G831HB31GB31HE31E021X1E31HI2EN31GJ31HL31GL31EA31I431AT31HQ31FM31HT31GT31GV3115258310J1931H031IZ31H331ET22F31EV1831IC31CF31IF31F4314U31HF2781B31IL31E531CU31IO31E92DY31HO31FJ31IT31HS310331HU31GU31EJ311522431GP1A31H031JW31J431H521X1L31J931F031JB31DX31JD31II1K31JH31FC31HK31BK31HM31GM31EB31HP31H331EG31D731JU312V31GP1N31H022K31JP31G231I92BR1M31K5318A31G9316931IG31K931GE1H31KC27931IN31KF31IP31JM31KI31JO31KK31GS31KM31HW311522J31GP1G31H031LJ31IR23331KT31I831EU314U1J31KY31HA31DV31L231GD31CN1I31L6316931JJ31L931JL31CY31FV31FK31HR31BG310E312W31671T319V21X1S319N315131BP21X1V31MG1U2EN2FO310L31CN1P21X1O312K31CN311K27431BK2782CR31ET2DA');local a=(bit or bit32);local d=a and a.bxor or function(a,b)local c,d,e=1,0,10 while a>0 and b>0 do local e,f=a%2,b%2 if e~=f then d=d+c end a,b,c=(a-e)/2,(b-f)/2,c*2 end if a<b then a=b end while a>0 do local b=a%2 if b>0 then d=d+c end a,c=(a-b)/2,c*2 end return d end local function c(c,a,b)if b then local a=(c/2^(a-1))%2^((b-1)-(a-1)+1);return a-a%1;else local a=2^(a-1);return(c%(a+a)>=a)and 1 or 0;end;end;local a=1;local function b()local f,e,c,b=h(j,a,a+3);f=d(f,69)e=d(e,69)c=d(c,69)b=d(b,69)a=a+4;return(b*16777216)+(c*65536)+(e*256)+f;end;local function i()local b=d(h(j,a,a),69);a=a+1;return b;end;local function f()local b,c=h(j,a,a+2);b=d(b,69)c=d(c,69)a=a+2;return(c*256)+b;end;local function q()local d=b();local a=b();local e=1;local d=(c(a,1,20)*(2^32))+d;local b=c(a,21,31);local a=((-1)^c(a,32));if(b==0)then if(d==0)then return a*0;else b=1;e=0;end;elseif(b==2047)then return(d==0)and(a*(1/0))or(a*(0/0));end;return m(a,b-1023)*(e+(d/(2^52)));end;local m=b;local function p(b)local c;if(not b)then b=m();if(b==0)then return'';end;end;c=e(j,a,a+b-1);a=a+b;local b={}for a=1,#c do b[a]=k(d(h(e(c,a,a)),69))end return o(b);end;local a=b;local function m(...)return{...},l('#',...)end local function h()local k={};local d={};local a={};local j={[#{"1 + 1 = 111";"1 + 1 = 111";}]=d,[#{"1 + 1 = 111";{175;70;546;355};{971;605;127;130};}]=nil,[#{"1 + 1 = 111";{738;123;91;18};"1 + 1 = 111";{140;520;560;895};}]=a,[#{"1 + 1 = 111";}]=k,};local a=b()local e={}for c=1,a do local b=i();local a;if(b==2)then a=(i()~=0);elseif(b==1)then a=q();elseif(b==3)then a=p();end;e[c]=a;end;j[3]=i();for a=1,b()do d[a-1]=h();end;for h=1,b()do local a=i();if(c(a,1,1)==0)then local d=c(a,2,3);local g=c(a,4,6);local a={f(),f(),nil,nil};if(d==0)then a[3]=f();a[4]=f();elseif(d==1)then a[3]=b();elseif(d==2)then a[3]=b()-(2^16)elseif(d==3)then a[3]=b()-(2^16)a[4]=f();end;if(c(g,1,1)==1)then a[2]=e[a[2]]end if(c(g,2,2)==1)then a[3]=e[a[3]]end if(c(g,3,3)==1)then a[4]=e[a[4]]end k[h]=a;end end;return j;end;local function o(a,b,f)a=(a==true and h())or a;return(function(...)local d=a[1];local e=a[3];local a=a[2];local i=m local b=1;local h=-1;local m={};local k={...};local j=l('#',...)-1;local a={};local c={};for a=0,j do if(a>=e)then m[a-e]=k[a+1];else c[a]=k[a+#{{773;266;942;918};}];end;end;local a=j-e+1 local a;local e;while true do a=d[b];e=a[1];if e<=32 then if e<=15 then if e<=7 then if e<=3 then if e<=1 then if e==0 then if(c[a[2]]==a[4])then b=b+1;else b=a[3];end;else if(c[a[2]]==a[4])then b=b+1;else b=a[3];end;end;elseif e>2 then do return end;else b=a[3];end;elseif e<=5 then if e>4 then local j;local l,m;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]l,m=i(c[e](g(c,e+1,a[3])))h=m+e-1 j=0;for a=e,h do j=j+1;c[a]=l[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else c[a[2]]();end;elseif e>6 then c[a[2]]=c[a[3]]-a[4];else c[a[2]]={};end;elseif e<=11 then if e<=9 then if e==8 then local a=a[2]c[a](c[a+1])else c[a[2]][a[3]]=a[4];end;elseif e>10 then local a=a[2]c[a]=c[a](c[a+1])else local a=a[2]c[a]=c[a](g(c,a+1,h))end;elseif e<=13 then if e>12 then c[a[2]]=a[3];else if(c[a[2]]~=a[4])then b=b+1;else b=a[3];end;end;elseif e>14 then c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=c[a[3]]-a[4];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]();else local b=a[2]c[b]=c[b](g(c,b+1,a[3]))end;elseif e<=23 then if e<=19 then if e<=17 then if e>16 then c[a[2]]=f[a[3]];else c[a[2]]=(a[3]~=0);end;elseif e==18 then b=a[3];else local a=a[2]c[a](c[a+1])end;elseif e<=21 then if e>20 then local d=a[2];local e=c[d]local f=c[d+2];if(f>0)then if(e>c[d+1])then b=a[3];else c[d+3]=e;end elseif(e<c[d+1])then b=a[3];else c[d+3]=e;end else local g;local e;e=a[2]c[e](c[e+1])b=b+1;a=d[b];e=a[2];g=c[a[3]];c[e+1]=g;c[e]=g[a[4]];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]();b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];if(c[a[2]]~=a[4])then b=b+1;else b=a[3];end;end;elseif e>22 then c[a[2]]=a[3];else local b=a[2]local d,a=i(c[b](g(c,b+1,a[3])))h=a+b-1 local a=0;for b=b,h do a=a+1;c[b]=d[a];end;end;elseif e<=27 then if e<=25 then if e>24 then local f;local e;e=a[2];f=c[a[3]];c[e+1]=f;c[e]=f[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];e=a[2];f=c[a[3]];c[e+1]=f;c[e]=f[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]={};b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];e=a[2]c[e](g(c,e+1,a[3]))else c[a[2]]=c[a[3]]-a[4];end;elseif e>26 then local d=a[2];local f=c[d+2];local e=c[d]+f;c[d]=e;if(f>0)then if(e<=c[d+1])then b=a[3];c[d+3]=e;end elseif(e>=c[d+1])then b=a[3];c[d+3]=e;end else c[a[2]][a[3]]=c[a[4]];end;elseif e<=29 then if e==28 then local j;local l,m;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]l,m=i(c[e](g(c,e+1,a[3])))h=m+e-1 j=0;for a=e,h do j=j+1;c[a]=l[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else if(c[a[2]]~=a[4])then b=b+1;else b=a[3];end;end;elseif e<=30 then c[a[2]][a[3]]=c[a[4]];elseif e>31 then local j;local l,m;local k;local e;c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]l,m=i(c[e](g(c,e+1,a[3])))h=m+e-1 j=0;for a=e,h do j=j+1;c[a]=l[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](c[e+1])b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]]=f[a[3]];else local b=a[2]c[b]=c[b](g(c,b+1,a[3]))end;elseif e<=48 then if e<=40 then if e<=36 then if e<=34 then if e==33 then c[a[2]]=c[a[3]]+a[4];else local j;local m,l;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]m,l=i(c[e](g(c,e+1,a[3])))h=l+e-1 j=0;for a=e,h do j=j+1;c[a]=m[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();end;elseif e==35 then c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=c[a[3]]+a[4];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=c[a[3]]+a[4];b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]();else local e;c[a[2]]=c[a[3]][a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=c[a[3]][a[4]];end;elseif e<=38 then if e==37 then local j;local l,m;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]l,m=i(c[e](g(c,e+1,a[3])))h=m+e-1 j=0;for a=e,h do j=j+1;c[a]=l[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else local d=a[2];local f=c[d+2];local e=c[d]+f;c[d]=e;if(f>0)then if(e<=c[d+1])then b=a[3];c[d+3]=e;end elseif(e>=c[d+1])then b=a[3];c[d+3]=e;end end;elseif e>39 then local j;local l,m;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]l,m=i(c[e](g(c,e+1,a[3])))h=m+e-1 j=0;for a=e,h do j=j+1;c[a]=l[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else c[a[2]]=a[3]-c[a[4]];end;elseif e<=44 then if e<=42 then if e>41 then local a=a[2]c[a]=c[a](g(c,a+1,h))else local d=a[2];local b=c[a[3]];c[d+1]=b;c[d]=b[a[4]];end;elseif e>43 then local a=a[2]c[a]=c[a](c[a+1])else c[a[2]]=(a[3]~=0);end;elseif e<=46 then if e>45 then local b=a[2]c[b](g(c,b+1,a[3]))else local g;local f;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2];f=c[e]g=c[e+2];if(g>0)then if(f>c[e+1])then b=a[3];else c[e+3]=f;end elseif(f<c[e+1])then b=a[3];else c[e+3]=f;end end;elseif e>47 then local j;local m,l;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]m,l=i(c[e](g(c,e+1,a[3])))h=l+e-1 j=0;for a=e,h do j=j+1;c[a]=m[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else c[a[2]]=f[a[3]];end;elseif e<=56 then if e<=52 then if e<=50 then if e==49 then local b=a[2]c[b](g(c,b+1,a[3]))else local j;local m,l;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]m,l=i(c[e](g(c,e+1,a[3])))h=l+e-1 j=0;for a=e,h do j=j+1;c[a]=m[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();end;elseif e>51 then local j;local m,l;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]m,l=i(c[e](g(c,e+1,a[3])))h=l+e-1 j=0;for a=e,h do j=j+1;c[a]=m[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else c[a[2]]=c[a[3]]+a[4];end;elseif e<=54 then if e>53 then c[a[2]]=c[a[3]][a[4]];else c[a[2]]={};end;elseif e>55 then c[a[2]]=c[a[3]][a[4]];else local b=a[2];local d=c[a[3]];c[b+1]=d;c[b]=d[a[4]];end;elseif e<=60 then if e<=58 then if e>57 then local j;local m,l;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]m,l=i(c[e](g(c,e+1,a[3])))h=l+e-1 j=0;for a=e,h do j=j+1;c[a]=m[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else do return end;end;elseif e>59 then local j;local m,l;local k;local e;c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e](c[e+1])b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];c[a[2]]=f[a[3]];b=b+1;a=d[b];e=a[2];k=c[a[3]];c[e+1]=k;c[e]=k[a[4]];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=(a[3]~=0);b=b+1;a=d[b];e=a[2]m,l=i(c[e](g(c,e+1,a[3])))h=l+e-1 j=0;for a=e,h do j=j+1;c[a]=m[j];end;b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,h))b=b+1;a=d[b];c[a[2]]();else c[a[2]][a[3]]=a[4];end;elseif e<=62 then if e>61 then c[a[2]]=a[3]-c[a[4]];else local b=a[2]local d,a=i(c[b](g(c,b+1,a[3])))h=a+b-1 local a=0;for b=b,h do a=a+1;c[b]=d[a];end;end;elseif e<=63 then c[a[2]]();elseif e==64 then local e;c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];e=a[2]c[e]=c[e](g(c,e+1,a[3]))b=b+1;a=d[b];c[a[2]][a[3]]=c[a[4]];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]][a[3]]=a[4];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];b=b+1;a=d[b];c[a[2]]=a[3];else local d=a[2];local e=c[d]local f=c[d+2];if(f>0)then if(e>c[d+1])then b=a[3];else c[d+3]=e;end elseif(e<c[d+1])then b=a[3];else c[d+3]=e;end end;b=b+1;end;end);end;return o(true,{},n())();end)(string.byte,table.insert,setmetatable);
+end)
+--fly race 
+flyr:addButton("Auto Farm", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Amenteshades/robloxscripts/main/flyracemobile.lua"))()
+end)
+--Apeirophobia
+apeiro:addButton("Only Script i found", function ()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XCD7/x/main/x'),true))()
+end)
+--ninja legends
+nl:addButton("Ophelia Hub", function ()
+loadstring(game:HttpGet("https://ophelia-hub.vercel.app/Loader.lua"))()
+end)
+--human cannon
+hcaf:addButton("Auto Farm", function ()
+loadstring(game:HttpGet("https://jumblescripts.com/HumanCannon.Lua"))()
+end)
+-- the survival game
+thesg:addButton("Player Esp, Ore Esp, Hitbox Expander, etc", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Survival808/main/SurvivalGame4"))()
+end)
+--funky friday
+ff:addButton("Auto Player", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))() -- from paradox scripts, i also got the above one from him. https://paradoxscripts.com
+end)
+--big paintball
+bigpaint:addButton("Aimbot | Godmode | Esp | Gun Mods, etc", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+end)
+--kat
+kat:addButton("Aimbot, Esp, and More", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))()
+end)
+--Bad Business
+badbu:addButton("No Recoil, Aimbot, Esp, Etc", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox"))()
+end)
+--criminality
+crim:addButton("Outliers Hub (patched)", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ternich/rbxscript/main/9990"))()
+end)
+crim:addButton("Fondra Hub (patched)", function ()
+loadstring(game:HttpGet("https://pastebin.com/raw/0Xxtfktr"))()
+end)
+crim:addButton("Path finding autofarm", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/dasldalsdlas"))()
+end)
+--zombie tycoon
+zombiet:addButton("Get All Gamepasses (Patched)", function ()
+Gp['Future Pack'].Value = true
+Gp['Grenade Launcher'].Value = true
+Gp['Frozen Upgrader'].Value = true
+Gp['Auto Collect'].Value = true
+Gp['Tycoon Color'].Value = true
+Gp['2x Cash'].Value = true
+Gp['Galaxy Dropper'].Value = true
+Gp['Speed Boost'].Value = true
+Gp['2x XP'].Value = true
+Gp.VIP.Value = true
+Gp['Golden Dropper'].Value = true
+end)
+--booga booga reborn
+bbr:addTextbox("Key", "Put the key Here", function(value)
+getgenv().Key = value
+end)
+bbr:addButton("Copy Key Link", function ()
+setclipboard("https://gabescripts.com/getkey.php")
+end)
+bbr:addButton("After puting the key, click this", function ()
+loadstring(game:HttpGet("https://gabescripts.com/access.lua"))()
+end)
+--Black Hawk Rescue Mission 5
+bhrm:addButton("Parvus Hub", function ()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/AlexR32/Parvus/main/Loader.lua"))(false,5)
+end)
+--murder mystery 2
+mm2:addButton("Eclipse Hub", function ()
+local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
+end)
+--My Restaurant
+mri:addButton("Auto Farm, Fast NPCs, Etc", function ()
+loadstring(game:HttpGet("http://void-scripts.com/Scripts/myRest.lua"))()
+end)
+--Military Tycoon
+mt:addButton("Auto Raid, Aimbot and More", function ()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/thedragonslayer2/Key-System/main/Load.lua")()
+end)
+--Driving Empire
+dp:addButton("Legend Handles", function ()	--creds to LegendHandles for making the script!
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/driving12234/main/Presents"))()
+end)
+--Apocalypse Rising 2
+apr:addButton("Parvus Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))()
+end)
+
+--Lumber Tycoon 2
+lt:addButton("Butter Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))()
+end)
+--other hubs
+ohub:addButton("Domain X", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/DomainX/main/source',true))()
+end)
+ohub:addButton("Void Hub(6 Games)", function ()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Blackout4781/Void-Hub/main/Loader.lua"))()
+end)
+ohub:addButton("King's hub v2(34+ Games)", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/zReal-King/King-Hub-v2/main/Loader.lua'))()
+end)
+ohub:addButton("V.G Hub (140+ Games)", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+ohub:addButton("Dark Hub V4.1 (14 Games)", function ()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Blackout4781/Void-Hub/main/Loader.lua"))()
+end)
+ohub:addButton("Unfair Hub(40+ Games)", function ()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
+end)
+ohub:addButton("PlasekHUB(4 Games)", function ()
+loadstring(game:HttpGet("https://pastebin.com/raw/QQn2E740"))()
+end)
+ohub:addButton("Dizzy Hub(17 Games)", function ()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/dizyhvh/rbx_scripts/main/dizzy_hub/loader.lua")))();
+end)
+ohub:addButton("Cumlin Hub(40+ Games)", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cumlin21/CumlinHub/main/1.txt"))()
+end)
+ohub:addButton("Obscure Hub(30+ Games)", function ()
+loadstring(game:HttpGet("https://www.obscurity.cf/Loader.lua"))()
+end)
+--de
+us:addButton("Hydroxide", function ()
+local owner = "Upbolt"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+end)
+us:addButton("Secure Dex", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+us:addButton("Turtle Spy", function ()
+loadstring(game:HttpGet("https://pastebin.com/raw/BDhSQqUU", true))()
+end)
+us:addButton("White Dex", function ()
+loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+end)
+us:addButton("Remote Spy", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/dasdasdasdsadasda"))()
+end)
+
+us2:addButton("Copy Current XYZ (May Not Work on some Exploits)", function ()
+setclipboard(tostring(xyz))
+end)
+
+local walk233 = us2:addTextbox(("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed), wakspeed, function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+local jump233 = us2:addTextbox(("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower), wakjump, function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+us2:addTextbox("Custom Kick Message: ", "Type Here", function(value, focuslost)
+print("...")
+if focuslost then
+	lp:Kick(value)
+end
+end)
+--script settings
+--local range1 = range:addTextbox("Range", "Default = 20", callback)
+range:addTextbox("Range", "Default = 20", function(value)
+getgenv().range = value
+end)
+local r1 = range:addButton("Current range:"..getgenv().range)
+venyx:SelectPage(venyx.pages[1], true) -- no default for more freedom
+local r2 = dealer:addButton("Current Auto Dealer State: "..tostring(getgenv().DealerAutoFarm))
+
+dealer:addButton("Change State", function ()
+getgenv().DealerAutoFarm = not getgenv().DealerAutoFarm
+print(getgenv().DealerAutoFarm)
+end)
+
+while 1 < 2 do
+	range:updateButton(r1, ("Current range: "..getgenv().range))
+	dealer:updateButton(r2, ("Current Auto Dealer State: "..tostring(getgenv().DealerAutoFarm)))
+	us2:updateTextbox(walk233, ("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed))
+	us2:updateTextbox(jump233, ("Current JumpPower: "..game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower))
+	wait(0.1)
+end
