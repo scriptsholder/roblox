@@ -1,3 +1,4 @@
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/___________"))()
 --[[ Idk who would edit or use this, but🤷‍♂️
 	How to create a page:
 local <pagename> = venyx:addPage("Name/Title", imageid)
@@ -31,7 +32,7 @@ function noti()
 game.StarterGui:SetCore("SendNotification", {
 Title = "Loading..."; 
 Text = "Loading";
-Duration = 0.1;
+Duration = 4;
 })
 end
 
@@ -143,6 +144,8 @@ local mt = autofarm:addSection("Military Tycoon")
 local dp = autofarm:addSection("Driving Empire")
 local apr = autofarm:addSection("Apocalypse Rising 2")
 local lt = autofarm:addSection("Lumber Tycoon 2")
+local af = autofarm:addSection("Anime Fighters Simulator")
+local has = autofarm:addSection("Hide and Seek Extreme")
 --script settings
 local range = ssettings:addSection("Autoactivate sword + Higher range Settings")
 local dealer = ssettings:addSection("Greenville: AutoFarm Dealer state")
@@ -713,6 +716,17 @@ end)
 --Lumber Tycoon 2
 lt:addButton("Butter Hub", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))()
+end)
+--Anime Fighters Simulator
+af:addButton("KJ Hub", function ()
+loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/KiJinGaming/FreeScript/main/KJHub.lua"))();
+end)
+af:addButton("SSJ3 Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gohan9k/ANFSnew/main/GOHANSSJ3"))()
+end)
+--Hide and Seek Extreme
+has:addButton("d", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/HideAndSeekExtreme.lua"))()
 end)
 --other hubs
 ohub:addButton("Domain X", function ()
