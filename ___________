@@ -40,6 +40,7 @@ repeat wait() noti() until game:IsLoaded() and game.Players and game.Players.Loc
 -- i could have made this way easier, but i made it this way
 getgenv().mainKey = "nil"
 getgenv().Key = "putkeyhere"
+(getgenv()).Key = "PYHT1-UV63E-O58V9-3TIBX-FSD0P-ITDNJ"
 if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local Lp = game:GetService('Players').LocalPlayer
 end
@@ -146,6 +147,14 @@ local apr = autofarm:addSection("Apocalypse Rising 2")
 local lt = autofarm:addSection("Lumber Tycoon 2")
 local af = autofarm:addSection("Anime Fighters Simulator")
 local has = autofarm:addSection("Hide and Seek Extreme")
+local mrs = autofarm:addSection("Tower Merge Simulator")
+local mr = autofarm:addSection("Merge Simulator")
+local pls = autofarm:addSection("Pls Donate")
+local click = autofarm:addSection("Clicker Simulator")
+local framed = autofarm:addSection("Framed")
+local law = autofarm:addSection("Longest Answer Wins")
+local viet = autofarm:addSection("Viet Pirates X")
+local miner = autofarm:addSection("Mine Racer")
 --script settings
 local range = ssettings:addSection("Autoactivate sword + Higher range Settings")
 local dealer = ssettings:addSection("Greenville: AutoFarm Dealer state")
@@ -190,8 +199,15 @@ s:addButton("Fates Admin | Ç to open", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
 end)
 --universal
+--walkspeed and jumppower
+generic:addSlider("Speed", "16", "0", "99999", function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+generic:addSlider("JumpPower", "50", "0", "1001", function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
+end)
 --Universal Script Search
-generic:addButton("Script Search (Yes, you can search for scripts inside a game)\nCredit: Cedric#0591", function ()
+generic:addButton("Script Search (Patched)\nCredit: Cedric#0591", function ()
 _G.posX = 0.405
 _G.posY = 0.9
 _G.searchButton = ";"
@@ -408,6 +424,9 @@ end)
 phantom:addButton("Hitbox expander", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Other/Phantom_Forces/Hit_Box_Expander.lua"))()
 end)
+phantom:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
 phantom:addButton("ReQiuYTPL Hub", function ()
 loadstring(game:HttpGet('https://gitfront.io/r/ReQiuYTPL/wFUydaK74uGx/hub/raw/ReQiuYTPLHub.lua'))()
 end)
@@ -437,6 +456,9 @@ end)
 petsimx:addButton("Cloud", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
 end)
+petsimx:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
 --king legacy
 kingl:addButton("Winnable (Normal)", function ()
 _G.Mode = "Normal" -- Aimbot / Normal
@@ -451,6 +473,9 @@ pcall(function()
     repeat wait() until game:IsLoaded()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/Hyper/main/script.lua"))()
 end)
+end)
+kingl:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
 end)
 --bee swarm
 bee:addButton("Histy Hub", function ()
@@ -473,6 +498,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub
 end)
 bee:addButton("Blue Hub", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/29"))()
+end)
+bee:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
 end)
 --sword fighter
 swordfg:addButton("Zaque Hub", function ()
@@ -610,6 +638,9 @@ end)
 df:addButton("Ghost Hub👍", function ()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghost-home/public/main/demonfall.lua', true))() 
 end)
+df:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
 --evade
 evade:addButton("Darkrai X", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Evade"))()
@@ -642,6 +673,9 @@ end)
 ff:addButton("Auto Player", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))() -- from paradox scripts, i also got the above one from him. https://paradoxscripts.com
 end)
+ff:addButton("Inf Points", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+end)
 --big paintball
 bigpaint:addButton("Aimbot | Godmode | Esp | Gun Mods, etc", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
@@ -657,6 +691,9 @@ end)
 --criminality
 crim:addButton("Outliers Hub (patched)", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Ternich/rbxscript/main/9990"))()
+end)
+crim:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
 end)
 crim:addButton("Fondra Hub (patched)", function ()
 loadstring(game:HttpGet("https://pastebin.com/raw/0Xxtfktr"))()
@@ -708,6 +745,9 @@ end)
 dp:addButton("Legend Handles", function ()	--creds to LegendHandles for making the script!
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/driving12234/main/Presents"))()
 end)
+dp:addButton("V.G Hub", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
 --Apocalypse Rising 2
 apr:addButton("Parvus Hub", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadoxScripts/hub/main/roblox" ))()
@@ -725,8 +765,40 @@ af:addButton("SSJ3 Hub", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gohan9k/ANFSnew/main/GOHANSSJ3"))()
 end)
 --Hide and Seek Extreme
-has:addButton("d", function ()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/HideAndSeekExtreme.lua"))()
+has:addButton("Track Hub", function ()
+loadstring(game:HttpGet('https://trackhub.ml/Main.lua'))()
+end)
+--Tower Merge Simulator
+mrs:addButton("Tora Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0towermerge", true))()
+end)
+--Merger Simulator
+mr:addButton("Click This", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Amenteso/robloxscripts/main/Key.lua",true))()
+end)
+--Pls Donate
+pls:addButton("Click This", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/autofarm"))()
+end)
+--clicker simulator
+click:addButton("Op Script!", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LaDamage/releases/main/Clicker-Simulator.lua"))()
+end)
+--framed
+framed:addButton("Sasware", function ()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/centerepic/Framed-GUI/main/Framed%20GUI.lua'))()
+end)
+--Longest Answer Wins
+law:addButton("Zepter X", function ()
+loadstring(game:HttpGet("https://hastebin.com/raw/fedololegi"))()
+end)
+--Viet Pirates X
+viet:addButton("Click to Load Script", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ir0kz/script/main/578-4_ryihssedaeyjjhf.lua"))()
+end)
+--Mine Racer
+miner:addButton("Obscurity Hub", function ()
+loadstring(game:HttpGet("https://www.obscurity.cf/Loader.lua"))()
 end)
 --other hubs
 ohub:addButton("Domain X", function ()
@@ -787,13 +859,14 @@ end)
 us2:addButton("Copy Current XYZ (May Not Work on some Exploits)", function ()
 setclipboard(tostring(xyz))
 end)
-
+--[[
 local walk233 = us2:addTextbox(("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed), wakspeed, function(value)
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 local jump233 = us2:addTextbox(("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower), wakjump, function(value)
 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
 end)
+]]
 us2:addTextbox("Custom Kick Message: ", "Type Here", function(value, focuslost)
 print("...")
 if focuslost then
@@ -817,7 +890,9 @@ end)
 while 1 < 2 do
 	range:updateButton(r1, ("Current range: "..getgenv().range))
 	dealer:updateButton(r2, ("Current Auto Dealer State: "..tostring(getgenv().DealerAutoFarm)))
+	--[[
 	us2:updateTextbox(walk233, ("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed))
 	us2:updateTextbox(jump233, ("Current JumpPower: "..game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower))
+	]]
 	wait(0.1)
 end
