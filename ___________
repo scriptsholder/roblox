@@ -75,7 +75,7 @@ local KeyCode = 'x'
 
 local a = os.time()
 local day = a / 8.64e+7
-_G.xrayvalue = false
+_G.xrayvalue = false --idk how that appeared, but if it appeared i will not remove it
 local wakjump = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
 _G.Options = {
     ["ToggleKey"] = "Delete",
