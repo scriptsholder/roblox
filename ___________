@@ -27,7 +27,6 @@ section1:addButton("Example!", function()
 print("Working!")
 end)
 ]]
---other things (other script configs, locals, etc)
 function noti()
 game.StarterGui:SetCore("SendNotification", {
 Title = "Loading..."; 
