@@ -39,6 +39,7 @@ end
 repeat wait() noti() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
 -- i could have made this way easier, but i made it this way
 getgenv().mainKey = "nil"
+_G.currentdiscord = "https://discord.gg/sgpzACdFu4"
 getgenv().Key = "putkeyhere"
 (getgenv()).Key = "PYHT1-UV63E-O58V9-3TIBX-FSD0P-ITDNJ"
 if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
@@ -155,6 +156,7 @@ local framed = autofarm:addSection("Framed")
 local law = autofarm:addSection("Longest Answer Wins")
 local viet = autofarm:addSection("Viet Pirates X")
 local miner = autofarm:addSection("Mine Racer")
+local infos = info:addSection(" ")
 --script settings
 local range = ssettings:addSection("Autoactivate sword + Higher range Settings")
 local dealer = ssettings:addSection("Greenville: AutoFarm Dealer state")
@@ -166,6 +168,10 @@ local ohub = othubs:addSection("")
 local us = dt:addSection("This is Normally Used By Script Devs")
 local us2 = dt:addSection("Other")
 --buttons
+--info
+infos:addButton("Copy Discord Link", function ()
+setclipboard(_G.currentdiscord)
+end)
 --universal aimbot/esp
 ss:addButton("Universal Aimbot+Esp", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/dasdasdasdas"))()
@@ -207,13 +213,14 @@ generic:addSlider("JumpPower", "50", "0", "1001", function(value)
 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
 end)
 --Universal Script Search
-generic:addButton("Script Search (Patched)\nCredit: Cedric#0591", function ()
+--[[
+generic:addButton("Script Search (Patched/Down)\nCredit: Cedric#0591", function ()
 _G.posX = 0.405
 _G.posY = 0.9
 _G.searchButton = ";"
 _G.commandPrefix = "/"
 spawn(loadstring(game:HttpGet('https://raw.githubusercontent.com/alvin677/search/main/search.lua'))())
-end)
+end)]]
 generic:addButton("R15 Anim Gui", function ()
 loadstring(game:HttpGet("https://pastebin.com/raw/0MLPL32f"))()
 end)
@@ -246,6 +253,9 @@ button.Position = UDim2.new(.5, 0, .5, 0)
 button.Text = 'infinite robux real'
 
 button.MouseButton1Click:Connect(loadstring(game:HttpGet'https://github.com/RunDTM/roblox-bluescreen/raw/main/bsod.lua'))
+end)
+generic:addButton("Kater Hub", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KATERGaming/Roblox/main/KaterHub.Lua"))()
 end)
 --fling button
 section1:addButton("Fling GUI", function ()
@@ -353,6 +363,14 @@ end)
 --sit
 generic:addButton("Sit", function ()
 game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = true --🤯
+end)
+--autoclicker
+generic:addButton("Auto Clicker", function ()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/JustEzpi/ROBLOX-Scripts/main/ROBLOX_AutoClicker"))()
+end)
+--server hop
+generic:addButton("Server Hop to Lower Server", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/dasdasdasdasdas"))()
 end)
 --ctrl destroy
 generic:addButton("Ctrl+Click destroy", function()
@@ -860,6 +878,20 @@ end)
 us2:addButton("Copy Current XYZ (May Not Work on some Exploits)", function ()
 setclipboard(tostring(xyz))
 end)
+us2:addButton("Fire All TouchInterest", function ()
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+        firetouchinterest(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+    end
+end
+end)
+us2:addButton("Fire All ClickDetector", function ()
+for i,v in pairs(game:GetDescendants()) do
+      if v:IsA("ClickDetector") then
+          fireclickdetector(v)
+      end
+  end
+end)
 --[[
 local walk233 = us2:addTextbox(("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed), wakspeed, function(value)
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
@@ -871,7 +903,7 @@ end)
 us2:addTextbox("Custom Kick Message: ", "Type Here", function(value, focuslost)
 print("...")
 if focuslost then
-	lp:Kick(value)
+	game:GetService("Players").LocalPlayer:Kick(value)
 end
 end)
 --script settings
