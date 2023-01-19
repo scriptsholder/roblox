@@ -177,7 +177,7 @@ others:addSlider("Gravity", "1", "-10", "1000", function(value)
 game:GetService("Workspace").Gravity = value
 end)
 --xray
-others:addButton("Xray", function ()
+others:addButton("Xray (Not Finished)", function ()
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
 	if v:IsA("Part") and v ~= char.HumanoidRootPart then
 		v.Transparency = 0.6
