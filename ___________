@@ -1,4 +1,4 @@
---Spaggheti code
+--Spaghetti code, i needed to add names above everything so i can find it later
 --[[ Idk who would edit or use this, but🤷‍♂️
 	How to create a page:
 local <pagename> = venyx:addPage("Name/Title", imageid)
