@@ -112,7 +112,7 @@ local s = admin:addSection(" ")
 local section1 = page:addSection("scripts to annoy people")
 local generic = page:addSection("Universal")
 --Autofarm
-local xxxxxxxxxxxxxxxxxxxxxxx = autofarm:addSection("KEEP IN MIND THAT I DIDN'T MAKE ANY SCRIPT HERE")
+local xxxxxxxxxxxxxxxxxxxxxxx = autofarm:addSection("KEEP IN MIND THAT I DIDN'T MAKE MOST SCRIPTS HERE")
 local bloxf = autofarm:addSection("Blox Fruits")
 local dimensions = autofarm:addSection("Anime Dimensions")
 local damage = autofarm:addSection("Every Second You Get +1 Damage")
