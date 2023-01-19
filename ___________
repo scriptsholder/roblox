@@ -42,32 +42,17 @@ getgenv().mainKey = "nil"
 _G.currentdiscord = "https://discord.gg/sgpzACdFu4"
 getgenv().Key = "putkeyhere"
 (getgenv()).Key = "PYHT1-UV63E-O58V9-3TIBX-FSD0P-ITDNJ"
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
+if game.PlaceId == 5909047091 then
 local Lp = game:GetService('Players').LocalPlayer
 end
-if game.PlaceId == 5909047091 then
-local Gp = Lp.Gamepasses
-end
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local lp = game:GetService("Players").LocalPlayer
-end
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local char = lp.Character
-end
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local xyz = lp.Character.HumanoidRootPart.Position
-end
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local humanoid = char.Humanoid
-end
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local wakspeed = humanoid.WalkSpeed
-end
 local Toggled = false
 local KeyCode = 'x'
-if game:GetService("Players"):FindFirstChild("LocalPlayer") ~= nil then
 local wakjump = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
-end
 _G.Options = {
     ["ToggleKey"] = "Delete",
 }
@@ -722,6 +707,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/
 end)
 --zombie tycoon
 zombiet:addButton("Get All Gamepasses (Patched)", function ()
+local Lp = game:GetService('Players').LocalPlayer
+local Gp = Lp.Gamepasses
 Gp['Future Pack'].Value = true
 Gp['Grenade Launcher'].Value = true
 Gp['Frozen Upgrader'].Value = true
