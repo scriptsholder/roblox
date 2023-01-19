@@ -39,31 +39,45 @@ end
 _G.x22 = 1
 repeat wait() noti() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
 -- i could have made this way easier, but i made it this way
+--Gui Library Made by : https://v3rmillion.net/member.php?action=profile&uid=244024 (the one i made looked so shit that i gave up and used a premade one)
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))() --someone reuploaded it so I put it in place of the original back up so guy can get free credit.
+local venyx = library.new("Bloom Hub😱", 5013109572)
+local mouseoXoX = game:GetService('Players').LocalPlayer:GetMouse();
+--locals
+_G.clickspam = true
+_G.touchspam = false
 getgenv().mainKey = "nil"
+
 _G.currentdiscord = "https://discord.gg/sgpzACdFu4"
+
 getgenv().Key = "putkeyhere"
+
 (getgenv()).Key = "PYHT1-UV63E-O58V9-3TIBX-FSD0P-ITDNJ"
+
 if game.PlaceId == 5909047091 then
 local Lp = game:GetService('Players').LocalPlayer
 end
 local lp = game:GetService("Players").LocalPlayer
+
 local char = lp.Character
+
 local xyz = lp.Character.HumanoidRootPart.Position
+
 local humanoid = char.Humanoid
+
 local wakspeed = humanoid.WalkSpeed
+
 local Toggled = false
+
 local KeyCode = 'x'
+
 local wakjump = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
 _G.Options = {
     ["ToggleKey"] = "Delete",
 }
 getgenv().range=20
 getgenv().DealerAutoFarm = true
---Gui Library Made by : https://v3rmillion.net/member.php?action=profile&uid=244024 (the one i made looked so shit that i gave up and used a premade one)
--- init
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))() --someone reuploaded it so I put it in place of the original back up so guy can get free credit.
-local venyx = library.new("Bloom Hub😱", 5013109572)
-local mouseoXoX = game:GetService('Players').LocalPlayer:GetMouse();
 _G.KeyBindoXoX = "p"
 -- themes
 local themes = {
@@ -143,6 +157,10 @@ local framed = autofarm:addSection("Framed")
 local law = autofarm:addSection("Longest Answer Wins")
 local viet = autofarm:addSection("Viet Pirates X")
 local miner = autofarm:addSection("Mine Racer")
+--[[
+local animal = autofarm:addSection("Animal Simulator")
+]]
+--info
 local infos = info:addSection(" ")
 --script settings
 local range = ssettings:addSection("Autoactivate sword + Higher range Settings")
@@ -165,11 +183,11 @@ end)
 local HideGuixOx = infos:addTextbox("Hide Gui Keybind: ".._G.KeyBindoXoX:upper())
 mouseoXoX.KeyDown:connect(function(key)
 key = key:lower()
-if key == _G.KeyBindoXoX then 
+if key == _G.KeyBindoXoX:lower() then 
 game:GetService("CoreGui")["Bloom Hub😱"].Enabled = not game:GetService("CoreGui")["Bloom Hub😱"].Enabled
 end
 end)
-infos::addTextbox("Change Keybind: ", " ", function(value, focuslost)
+infos:addTextbox("Change Keybind: ", " ", function(value, focuslost)
 if focuslost then
 	_G.KeyBindoXoX = string.sub(value, -1)
 end
@@ -213,6 +231,9 @@ game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 generic:addSlider("JumpPower", "50", "0", "1001", function(value)
 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+generic:addSlider("Gravity", "1", "-10", "1000", function(value)
+game:GetService("Workspace").Gravity = value
 end)
 --Universal Script Search
 --[[
@@ -727,8 +748,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/
 end)
 --zombie tycoon
 zombiet:addButton("Get All Gamepasses (Patched)", function ()
-local Lp = game:GetService('Players').LocalPlayer
-local Gp = Lp.Gamepasses
 Gp['Future Pack'].Value = true
 Gp['Grenade Launcher'].Value = true
 Gp['Frozen Upgrader'].Value = true
@@ -826,6 +845,16 @@ end)
 miner:addButton("Obscurity Hub", function ()
 loadstring(game:HttpGet("https://www.obscurity.cf/Loader.lua"))()
 end)
+--[[Animal Simulator | animal simulator
+animal:addTextbox("WebHook", "Link Here", function(value, focuslost)
+if focuslost then
+	getgenv().LocalWebhookId = value
+end
+end)
+animal:addButton("Auto farm | Support Webhook", function ()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Xen101/Roblox/main/Animal%20Simulator/ONI-HUB%20Open%20Source'),true))()
+end)
+]]
 --other hubs
 ohub:addButton("Domain X", function ()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/DomainX/main/source',true))()
@@ -892,6 +921,36 @@ for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
     end
 end
 end)
+us2:addButton("Spam All TouchInterest", function ()
+_G.touchspam = not _G.touchspam
+while _G.touchspam == true do
+	for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+        firetouchinterest(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+    end
+end
+wait(0.1)
+end
+end)
+us2:addButton("Spam All ClickDetector", function ()
+_G.clickspam = not _G.clickspam
+while _G.clickspam == true do
+	for i,v in pairs(game:GetDescendants()) do
+      if v:IsA("ClickDetector") then
+          fireclickdetector(v)
+      end
+  end
+  wait(0.1)
+end
+end)
+us2:addButton("Stop Spamming", function ()
+	if _G.clickspam == true then
+		_G.clickspam = false
+	end
+	if _G.touchspam == true then
+		_G.touchspam = false
+	end
+end)
 us2:addButton("Fire All ClickDetector", function ()
 for i,v in pairs(game:GetDescendants()) do
       if v:IsA("ClickDetector") then
@@ -937,7 +996,22 @@ while 1 < 2 do
 	]]
 	wait(0.1)
 end
+--[[
+while _G.touchspam == true do
+	for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+        firetouchinterest(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+    end
+end
+end
 
+while _G.clickspam == true do
+	for i,v in pairs(game:GetDescendants()) do
+      if v:IsA("ClickDetector") then
+          fireclickdetector(v)
+      end
+  end
+end]]
 --[[
 --163, 162, 165
 --27, 42, 53
