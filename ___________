@@ -48,6 +48,8 @@ _G.clickspam = true
 _G.touchspam = false
 getgenv().mainKey = "nil"
 
+local pppp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+
 _G.currentdiscord = "https://discord.gg/sgpzACdFu4"
 
 getgenv().Key = "putkeyhere"
@@ -71,6 +73,8 @@ local Toggled = false
 
 local KeyCode = 'x'
 
+local a = os.time()
+local day = a / 8.64e+7
 _G.xrayvalue = false
 local wakjump = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
 _G.Options = {
@@ -79,6 +83,7 @@ _G.Options = {
 getgenv().range=20
 getgenv().DealerAutoFarm = true
 _G.KeyBindoXoX = "p"
+local playerping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
 -- themes
 local themes = {
 Background = Color3.fromRGB(24, 24, 24),
@@ -107,6 +112,7 @@ local s = admin:addSection(" ")
 local section1 = page:addSection("scripts to annoy people")
 local generic = page:addSection("Universal")
 --Autofarm
+local xxxxxxxxxxxxxxxxxxxxxxx = autofarm:addSection("KEEP IN MIND THAT I DIDN'T MAKE ANY SCRIPT HERE")
 local bloxf = autofarm:addSection("Blox Fruits")
 local dimensions = autofarm:addSection("Anime Dimensions")
 local damage = autofarm:addSection("Every Second You Get +1 Damage")
@@ -176,8 +182,12 @@ end)
 others:addSlider("Gravity", "1", "-10", "1000", function(value)
 game:GetService("Workspace").Gravity = value
 end)
+--health
+others:addSlider("Health (Visual)", "100", "-100", "99999", function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.Health = value
+end)
 --xray
-others:addButton("Xray (Not Finished)", function ()
+others:addButton("Xray", function ()
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
 	if v:IsA("Part") and v ~= char.HumanoidRootPart then
 		v.Transparency = 0.6
@@ -216,6 +226,12 @@ local us2 = dt:addSection("Other")
 --info
 infos:addButton("Copy Discord Link", function ()
 setclipboard(_G.currentdiscord)
+end)
+infos:addButton(("Day: "..math.floor(day)), function ()
+end)
+local pingXo = infos:addButton(("Ping: "..playerping), function ()
+end)
+local healthXo = infos:addButton(("Health: "..game:GetService("Players").LocalPlayer.Character.Humanoid.Health), function ()
 end)
 infos:addButton("Destroy Gui", function ()
 game:GetService("CoreGui")["Bloom Hub😱"]:Destroy()
@@ -1026,6 +1042,8 @@ while 1 < 2 do
 	range:updateButton(r1, ("Current range: "..getgenv().range))
 	dealer:updateButton(r2, ("Current Auto Dealer State: "..tostring(getgenv().DealerAutoFarm)))
 	infos:updateTextbox(HideGuixOx, "Hide Gui Keybind: "..tostring(_G.KeyBindoXoX:upper()))
+	infos:updateButton(pingXo, "Ping: "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString())
+	infos:updateButton(healthXo, ("Health: "..game:GetService("Players").LocalPlayer.Character.Humanoid.Health))
 	--[[
 	us2:updateTextbox(walk233, ("Current Walkspeed: "..game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed))
 	us2:updateTextbox(jump233, ("Current JumpPower: "..game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower))
