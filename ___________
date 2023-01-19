@@ -157,6 +157,7 @@ local framed = autofarm:addSection("Framed")
 local law = autofarm:addSection("Longest Answer Wins")
 local viet = autofarm:addSection("Viet Pirates X")
 local miner = autofarm:addSection("Mine Racer")
+local bedwars = autofarm:addSection("Bed Wars")
 --[[
 local animal = autofarm:addSection("Animal Simulator")
 ]]
@@ -844,6 +845,10 @@ end)
 --Mine Racer
 miner:addButton("Obscurity Hub", function ()
 loadstring(game:HttpGet("https://www.obscurity.cf/Loader.lua"))()
+end)
+--bed wars | Bed Wars
+bedwars:addButton("Vape V4", function ()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
 --[[Animal Simulator | animal simulator
 animal:addTextbox("WebHook", "Link Here", function(value, focuslost)
