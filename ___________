@@ -169,14 +169,11 @@ if key == _G.KeyBindoXoX then
 game:GetService("CoreGui")["Bloom Hub😱"].Enabled = not game:GetService("CoreGui")["Bloom Hub😱"].Enabled
 end
 end)
---[[
-infos:addButton("Change Keybind | Click and Press Key You Want", function()
-mouseoXoX.KeyDown:connect(function(key)
-	if key:lower() ~= _G.KeyBindoXoX:lower() then
-		_G.KeyBindoXoX = key
-	end
+infos::addTextbox("Change Keybind: ", " ", function(value, focuslost)
+if focuslost then
+	_G.KeyBindoXoX = string.sub(value, -1)
+end
 end)
-end)]]
 --universal aimbot/esp
 ss:addButton("Universal Aimbot+Esp", function ()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptsholder/roblox/main/dasdasdasdas"))()
