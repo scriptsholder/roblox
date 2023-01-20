@@ -27,6 +27,7 @@ section1:addButton("Example!", function()
 print("Working!")
 end)
 ]]
+--insane notification script🔥🔥
 function noti()
 game.StarterGui:SetCore("SendNotification", {
 Title = "Loading..."; 
@@ -35,7 +36,7 @@ Duration = 4;
 })
 end
 
-_G.x22 = 1
+_G.x22 = 1 --idk where i used that
 repeat wait() noti() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
 -- i could have made this way easier, but i made it this way
 --Gui Library Made by : https://v3rmillion.net/member.php?action=profile&uid=244024 (the one i made looked so shit that i gave up and used a premade one)
@@ -59,7 +60,7 @@ getgenv().Key = "putkeyhere"
 if game.PlaceId == 5909047091 then
 local Lp = game:GetService('Players').LocalPlayer
 end
-local lp = game:GetService("Players").LocalPlayer
+local lp = game:GetService("Players").LocalPlayer --why not have 9 types of local player variables?
 
 local char = lp.Character
 
@@ -74,7 +75,7 @@ local Toggled = false
 local KeyCode = 'x'
 
 local a = os.time()
-local day = a / 8.64e+7
+local day = a / 8.64e+7 -- math genius🔥
 _G.xrayvalue = false --idk how that appeared, but if it appeared i will not remove it
 local wakjump = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
 _G.Options = {
@@ -1035,7 +1036,7 @@ local r2 = dealer:addButton("Current Auto Dealer State: "..tostring(getgenv().De
 
 dealer:addButton("Change State", function ()
 getgenv().DealerAutoFarm = not getgenv().DealerAutoFarm
-print(getgenv().DealerAutoFarm)
+--print(getgenv().DealerAutoFarm)
 end)
 
 while 1 < 2 do
@@ -1066,8 +1067,8 @@ while _G.clickspam == true do
       end
   end
 end]]
---[[
---163, 162, 165
+--[[ extremely bad search thing
+--163, 162, 165 ??
 --27, 42, 53
 local mainframe = game:GetService("CoreGui")["Bloom Hub😱"].Main["Specific\nGames"]
 local text = mainframe["Blox Fruits"].Container.Textbox
