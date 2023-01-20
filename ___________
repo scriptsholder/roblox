@@ -234,6 +234,8 @@ local pingXo = infos:addButton(("Ping: "..playerping), function ()
 end)
 local healthXo = infos:addButton(("Health: "..game:GetService("Players").LocalPlayer.Character.Humanoid.Health), function ()
 end)
+infos:addButton("This Script Has Anti Afk by Default", function ()
+end)
 infos:addButton("Destroy Gui", function ()
 game:GetService("CoreGui")["Bloom Hub😱"]:Destroy()
 end)
@@ -1051,6 +1053,10 @@ while 1 < 2 do
 	]]
 	wait(0.1)
 end
+connect(game:GetService("Players").LocalPlayer.Idled, function()
+    game:GetService("VirtualUser"):ClickButton1(Vector2.zero, camera)
+	print('Antiafk test')
+end);
 --[[
 while _G.touchspam == true do
 	for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
