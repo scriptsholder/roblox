@@ -1,5 +1,5 @@
 --Spaghetti code, i needed to add names above everything so i can find it later
---[[ Idk who would edit or use this, but🤷‍♂️
+--[[ tutorial of how to add your own thing (you obviously need to add it under "local venyx = library.new("Bloom Hub😱", 5013109572)" else it will destroy everything👍
 	How to create a page:
 local <pagename> = venyx:addPage("Name/Title", imageid)
 	Page Example:
@@ -85,7 +85,7 @@ getgenv().range=20
 getgenv().DealerAutoFarm = true
 _G.KeyBindoXoX = "p"
 local playerping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
--- themes
+-- themes that i will never change
 local themes = {
 Background = Color3.fromRGB(24, 24, 24),
 Glow = Color3.fromRGB(0, 0, 0),
@@ -171,7 +171,7 @@ local bedwars = autofarm:addSection("Bed Wars")
 local animal = autofarm:addSection("Animal Simulator")
 ]]
 --other
---walkspeed
+--walkspeed, Why not add the scripts at the sections part🤩? 
 others:addSlider("Speed", "16", "0", "9999", function(value)
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
@@ -219,9 +219,9 @@ local dealer = ssettings:addSection("Greenville: AutoFarm Dealer state")
 --aimbot
 local ss = aimbot:addSection(" ")
 --h
-local ohub = othubs:addSection("")
+local ohub = othubs:addSection("") 
 --dt
-local us = dt:addSection("This is Normally Used By Script Devs")
+local us = dt:addSection("This is Normally Used By Script Devs") 
 local us2 = dt:addSection("Other")
 --buttons
 --info
