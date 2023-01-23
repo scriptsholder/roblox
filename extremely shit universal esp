@@ -1,0 +1,30 @@
+--i didn't even have time to finish this, got error 268 for rejoining many times
+local screen = Instance.new("ScreenGui")
+screen.Parent = game:GetService("CoreGui")
+screen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local port = Instance.new("ViewportFrame")
+port.Parent = screen
+port.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+port.Size = UDim2.new(1, 0, 1, 0)
+port.BackgroundTransparency = 1
+port.Visible = true
+port.CurrentCamera = workspace.CurrentCamera
+local part = Instance.new("Part", port)
+part.Anchored = true
+part.Size = Vector3.new(1, 1, 1)
+part.Color = Color3.fromRGB(255, 0, 0)
+for i, v in (game:GetService("Players"):GetChildren()) do 
+	if v and v.Character then
+		if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+		local partc = part:Clone()
+		partc.Parent = port
+		local character = v.Character.HumanoidRootPart
+		if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+			while true do
+		partc.CFrame = CFrame.new(character.Position)
+		wait()
+			end
+		end
+		end
+	end
+end
