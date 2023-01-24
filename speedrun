@@ -1,0 +1,9 @@
+while true do 
+local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+        firetouchinterest(playerhead, v.Parent, 0)
+    end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1422.81, 227.42, -256.42)
+wait(2)
+end
