@@ -1,0 +1,151 @@
+
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=244024
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))() --someone reuploaded it so I put it in place of the original back up so guy can get free credit.
+local venyx = library.new("Ro fruit", 5013109572)
+
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = venyx:addPage("Main", 5012544693)
+local section1 = page:addSection("Main")
+local section2 = page:addSection("Keybind")
+
+section1:addButton("Bring fruits(click)", function()
+local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+        firetouchinterest(playerhead, v.Parent, 0)
+    end
+end
+end)
+
+section1:addButton("Alt+Click = Remove alt(doing again bring it back)", function()
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftAlt) then return end
+if not Mouse.Target then return end
+if Mouse.Target.Transparency == 0 then
+Mouse.Target.Transparency = 1
+Mouse.Target.CanCollide = false
+elseif Mouse.Target.Transparency == 1 then
+Mouse.Target.Transparency = 0
+Mouse.Target.CanCollide = true
+end
+end)
+end)
+
+section1:addButton("Ctrl+Click in any npc head = kill", function()
+ local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+end)
+--sec 2
+section2:addKeybind("Close gui key", Enum.KeyCode.One, function()
+print("Activated Keybind")
+venyx:toggle()
+end, function()
+print("Changed Keybind")
+end)
+section2:addColorPicker("ColorPicker", Color3.fromRGB(50, 50, 50))
+section2:addColorPicker("ColorPicker2")
+section2:addSlider("Slider", 0, -100, 100, function(value)
+print("Dragged", value)
+end)
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+colors:addColorPicker(theme, color, function(color3)
+venyx:setTheme(theme, color3)
+end)
+end
+--page 3
+local page = venyx:addPage("Guis", 5012544693)
+local section1 = page:addSection("Gui")
+local section2 = page:addSection("Cant click the X?")
+
+section1:addButton("Haki shop", function()
+game:GetService("Players").LocalPlayer.PlayerGui.HakiShop.Enabled = true
+end)
+
+section1:addButton("Codes", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Code.BK.Visible = true
+end)
+
+section1:addButton("Katana shop", function()
+game:GetService("Players").LocalPlayer.PlayerGui.KatanaShop.Enabled = true
+end)
+
+section2:addButton("Undo haki shop", function()
+game:GetService("Players").LocalPlayer.PlayerGui.HakiShop.Enabled = false
+end)
+
+section2:addButton("Undo Codes", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Code.BK.Visible = false
+end)
+
+section2:addButton("Undo Katana shop", function()
+game:GetService("Players").LocalPlayer.PlayerGui.KatanaShop.Enabled = false
+end)
+--page 4
+local page = venyx:addPage("Insta kill boss", 5012544693)
+local section1 = page:addSection("Kill :)")
+
+section1:addButton("Only work if theres no one else than you at the boss", function()
+ print('read')
+end)
+
+section1:addButton("Buggy", function()
+game:GetService("Workspace").Mob["Buggy [Lv.20]"].Head:Destroy()
+end)
+
+section1:addButton("??? boss", function()
+game:GetService("Workspace").Mob["??? [Lv.250]"].Head:Destroy()
+end)
+
+section1:addButton("Thor", function()
+game:GetService("Workspace").Mob["Thor [Lv.350]"].Head:Destroy()
+end)
+
+section1:addButton("Enma", function()
+game:GetService("Workspace").Mob["Enma [Lv.400]"].Head:Destroy()
+end)
+
+section1:addButton("Ryuma", function()
+game:GetService("Workspace").Mob["Ryuma [Lv.500]"].Head:Destroy()
+end)
+
+section1:addButton("Shanks", function()
+game:GetService("Workspace").Mob["Shank [Lv.900]"].Head:Destroy()
+end)
+
+section1:addButton("Monkey error", function()
+game:GetService("Workspace").Mob["Monkey Error [Lv.75]"].Head:Destroy()
+end)
+
+section1:addButton("Mihawk", function()
+game:GetService("Workspace").Mob["Mihawk [Lv.1000]"].Head:Destroy()
+end)
+
+section1:addButton("Sandia kimistuu", function()
+game:GetService("Workspace").Mob["Sandia kimistuu [Lv.200]"].Head:Destroy()
+end)
+-- load
+venyx:SelectPage(venyx.pages[1], true) -- no default for more freedom
