@@ -1,0 +1,7 @@
+print('start')
+
+local children = game.Players.LocalPlayer.QuestHaze:GetChildren()
+for i = 1, #children do
+    print(i, children[i].Name , children[i].Value)
+end
+print("end")
