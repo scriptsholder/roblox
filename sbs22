@@ -1,0 +1,10 @@
+local lp = game:GetService("Players").LocalPlayer
+local char = lp.Character
+local root = char.HumanoidRootPart
+while true do
+game:GetService("Workspace").QuestionPack.MainPart.CFrame = CFrame.new(root.Position)
+game:GetService("Workspace").SpawnPack.MainPart.CFrame = CFrame.new(root.Position)
+game:GetService("Workspace").DesertPack.MainPart.CFrame = CFrame.new(root.Position)
+game:GetService("Workspace").FishPack.MainPart.CFrame = CFrame.new(root.Position)
+wait(0.1)
+end
