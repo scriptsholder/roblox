@@ -1,0 +1,37 @@
+local lp = game:GetService("Players").LocalPlayer
+local char = lp.Character
+local root = char.HumanoidRootPart
+while true do
+for i, v in pairs(game:GetService("Workspace").Buttons.Spawn["01Multi"]:GetDescendants()) do
+	if v:IsA("Part") and v.Name == "MainPart" then
+		v.CFrame = CFrame.new(root.Position)
+	end
+end
+wait(0.2)
+for i, v in pairs(game:GetService("Workspace").Buttons.Spawn["02Rebirth"]:GetDescendants()) do
+	if v:IsA("Part") and v.Name == "MainPart" then
+		v.CFrame = CFrame.new(root.Position)
+	end
+end
+wait(0.2)
+for i, v in pairs(game:GetService("Workspace").Buttons.Spawn["03UltraRebirth"]:GetDescendants()) do
+	if v:IsA("Part") and v.Name == "MainPart" then
+		v.CFrame = CFrame.new(root.Position)
+	end
+end
+wait(0.2)
+for i, v in pairs(game:GetService("Workspace").Buttons.Spawn["04MegaRebirth"]:GetDescendants()) do
+	if v:IsA("Part") and v.Name == "MainPart" then
+		v.CFrame = CFrame.new(root.Position)
+	end
+end
+wait(0.2)
+for i, v in pairs(game:GetService("Workspace").Buttons.Spawn["05Prestige"]:GetDescendants()) do
+	if v:IsA("Part") and v.Name == "MainPart" then
+		v.CFrame = CFrame.new(root.Position)
+	end
+end
+wait(0.2)
+char.Humanoid.Jump = true
+task.wait(0.2)
+end
