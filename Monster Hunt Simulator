@@ -8,7 +8,7 @@ local productd = lp.data.product_data
 local mapdata = lp.data["map_data"]
 _G.autolvlup = false
 _G.a = false
-data1.maxWeaponBag.Value = 999 -- if x > 301, x = 300🤯
+data1.maxWeaponBag.Value = 999
 if game:GetService("Workspace"):FindFirstChild("kick") ~= nil then
 	game:GetService("Workspace").kick:Destroy()
 end
